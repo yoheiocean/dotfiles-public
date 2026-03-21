@@ -15,6 +15,7 @@ CONFIGS=(
 # Files to symlink into ~/
 HOME_FILES=(
     "bash/.bash_profile:.bash_profile"
+    "bash/.bashrc:.bashrc"
 )
 
 echo "Creating symlinks..."

@@ -20,7 +20,8 @@ Minimal Hyprland desktop, built incrementally.
 ├── packages.sh         # installs all tracked packages (pacman + AUR)
 ├── setup.sh            # creates symlinks, runs bootstrap tasks
 ├── bash/
-│   └── .bash_profile   # shell profile (auto-starts Hyprland on TTY1)
+│   ├── .bash_profile   # shell profile (auto-starts Hyprland on TTY1)
+│   └── .bashrc         # interactive shell config (aliases, PATH)
 ├── hypr/
 │   └── hyprland.conf   # Hyprland compositor config
 └── kitty/
@@ -34,13 +35,14 @@ New directories are added as new tools are configured (waybar/, wofi/, etc.).
 | Source (~/dotfiles/...)      | Target                              |
 |------------------------------|-------------------------------------|
 | `bash/.bash_profile`        | `~/.bash_profile`                   |
-| `hypr/hyprland.conf`        | `~/.config/hypr/hyprland.conf`      |
-| `kitty/kitty.conf`          | `~/.config/kitty/kitty.conf`        |
+| `bash/.bashrc`              | `~/.bashrc`                         |
+| `hypr/`                     | `~/.config/hypr/`                   |
+| `kitty/`                    | `~/.config/kitty/`                  |
 
 ## Current Goal
 
-Get a minimal Hyprland session launching with kitty as the terminal emulator.
-Nothing else yet — no bar, no launcher, no wallpaper.
+Hyprland desktop is functional — launched via uwsm, kitty as terminal, basic keybinds, volume/brightness/media keys working.
+Next up: app launcher (wofi), then bar and wallpaper.
 
 ## Hardware
 

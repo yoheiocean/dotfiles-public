@@ -9,6 +9,7 @@ PACKAGES=(
     # Wayland / Hyprland
     hyprland
     xdg-desktop-portal-hyprland
+    uwsm
 
     # Terminal
     kitty
