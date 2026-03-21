@@ -3,10 +3,10 @@
 ## Done
 
 - **Base Hyprland session** — hyprland, kitty, mesa, intel-media-driver, xdg-desktop-portal-hyprland
-- **Hyprland config** — monitor, input, gaps, borders, keybinds (SUPER+Return for kitty, SUPER+Q close, SUPER+H/J/K/L focus, workspaces 1-5, fullscreen, floating)
+- **Hyprland config** — monitor, input, gaps, borders, edge resize, keybinds (SUPER+Return terminal, SUPER+W close, SUPER+Q close all in workspace, SUPER+Space launcher, F11 fullscreen, SUPER+H/J/K/L and arrow keys focus, SUPER+/-/= resize, workspaces 1-5, floating)
 - **Authentication agent** — polkit-gnome (exec-once in hyprland.conf)
-- **File manager** — thunar
-- **Notification daemon** — mako (exec-once in hyprland.conf)
+- **File manager** — yazi (terminal-based, opens in kitty)
+- **Notification daemon** — mako (exec-once in hyprland.conf, 10s auto-dismiss)
 - **Clipboard** — wl-clipboard
 - **Editor** — neovim
 - **Auto-start Hyprland** — bash/.bash_profile launches Hyprland on TTY1

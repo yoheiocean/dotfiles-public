@@ -24,8 +24,10 @@ Minimal Hyprland desktop, built incrementally.
 │   └── .bashrc         # interactive shell config (aliases, PATH)
 ├── hypr/
 │   └── hyprland.conf   # Hyprland compositor config
-└── kitty/
-    └── kitty.conf      # kitty terminal config
+├── kitty/
+│   └── kitty.conf      # kitty terminal config
+└── mako/
+    └── config          # notification daemon config
 ```
 
 New directories are added as new tools are configured (waybar/, wofi/, etc.).
@@ -38,11 +40,18 @@ New directories are added as new tools are configured (waybar/, wofi/, etc.).
 | `bash/.bashrc`              | `~/.bashrc`                         |
 | `hypr/`                     | `~/.config/hypr/`                   |
 | `kitty/`                    | `~/.config/kitty/`                  |
+| `mako/`                     | `~/.config/mako/`                   |
 
 ## Current Goal
 
 Hyprland desktop is functional — launched via uwsm, kitty as terminal, basic keybinds, volume/brightness/media keys working.
 Next up: app launcher (wofi), then bar and wallpaper.
+
+## Future TODO
+
+- **OSD notifications for hardware keys** — visual/audio feedback when pressing volume, brightness, and media keys (e.g. an on-screen display showing current level)
+- **GUI control center** — a visual settings panel for volume, brightness, network, etc.
+- **Global copy/paste/select-all keybinds** — consider Super+C/V/A mapping for GUI apps once they're in use
 
 ## Hardware
 

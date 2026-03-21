@@ -22,7 +22,7 @@ PACKAGES=(
     polkit-gnome
 
     # File manager
-    thunar
+    yazi
 
     # Notification daemon
     mako
@@ -32,6 +32,9 @@ PACKAGES=(
 
     # Editor
     neovim
+
+    # Utilities
+    jq
 
     # Git / GitHub
     github-cli

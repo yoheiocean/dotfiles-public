@@ -10,6 +10,7 @@ DOTFILES="$HOME/dotfiles"
 CONFIGS=(
     hypr
     kitty
+    mako
 )
 
 # Files to symlink into ~/
