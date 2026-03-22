@@ -13,6 +13,7 @@ CONFIGS=(
     kitty
     mako
     starship
+    walker
 )
 
 # Files to symlink into ~/
@@ -72,5 +73,17 @@ sudo systemctl enable systemd-resolved
 # Point resolv.conf to systemd-resolved (iwd delegates DNS to it)
 sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 echo "  networking: iwd + systemd-resolved enabled"
+
+# Bluetooth
+echo ""
+echo "Enabling bluetooth..."
+sudo systemctl enable bluetooth
+echo "  bluetooth: enabled"
+
+# Elephant (walker's data provider — runs as user service)
+echo ""
+echo "Enabling elephant..."
+elephant service enable
+echo "  elephant: enabled"
 
 echo "Done."

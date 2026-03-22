@@ -38,6 +38,11 @@ PACKAGES=(
     # Networking
     iwd
 
+    # Bluetooth
+    bluez
+    bluez-utils
+    bluetui
+
     # Wallpaper
     swww
 
@@ -50,6 +55,7 @@ PACKAGES=(
     bat
     eza
     zoxide
+    fastfetch
 
     # Git / GitHub
     github-cli
@@ -72,6 +78,16 @@ fi
 AUR_PACKAGES=(
     # Network TUI
     impala
+
+    # App launcher
+    walker
+    elephant
+    elephant-desktopapplications
+    elephant-clipboard
+    elephant-calc
+    elephant-websearch
+    elephant-runner
+    elephant-files
 )
 
 echo "Installing AUR packages..."

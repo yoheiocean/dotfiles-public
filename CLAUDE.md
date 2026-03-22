@@ -8,7 +8,7 @@ Minimal Hyprland desktop, built incrementally.
 ## Principles
 
 - **Incremental** — add one thing at a time, verify it works, then move on
-- **Reproducible** — `packages.sh` lists every explicitly installed package; `setup.sh` symlinks configs and bootstraps a fresh machine
+- **Reproducible** — `packages.sh` lists every explicitly installed package; `setup.sh` symlinks configs and bootstraps a fresh machine. When a new package requires a `systemctl enable` or other system-level setup, add it to `setup.sh` so a fresh machine is fully configured in one run.
 - **Symlinked** — all config files live here in `~/dotfiles` and are symlinked to their proper locations (e.g. `~/.config/hypr/hyprland.conf` → `~/dotfiles/hypr/hyprland.conf`)
 - **Minimal** — no bloat, no unused configs, no "just in case" packages
 
@@ -35,11 +35,16 @@ Minimal Hyprland desktop, built incrementally.
 │   └── current-theme.conf   # kitty color theme (Popping and Locking)
 ├── mako/
 │   └── config          # notification daemon config
-└── starship/
-    └── starship.toml   # starship prompt config (custom warm dark palette)
+├── starship/
+│   └── starship.toml   # starship prompt config (custom warm dark palette)
+└── walker/
+    ├── config.toml     # walker app launcher config
+    └── themes/
+        └── popping-and-locking/
+            └── style.css  # custom theme matching kitty/starship colors
 ```
 
-New directories are added as new tools are configured (waybar/, wofi/, etc.).
+New directories are added as new tools are configured (waybar/, etc.).
 
 ## Symlink Mapping
 
@@ -53,12 +58,15 @@ New directories are added as new tools are configured (waybar/, wofi/, etc.).
 | `kitty/`                    | `~/.config/kitty/`                  |
 | `mako/`                     | `~/.config/mako/`                   |
 | `starship/`                 | `~/.config/starship/`               |
+| `walker/`                   | `~/.config/walker/`                 |
 
 ## Current Goal
 
 Hyprland desktop is functional — launched via uwsm, kitty as terminal, basic keybinds, volume/brightness/media keys working.
 Terminal styled with Starship prompt (custom palette) and kitty theme (Popping and Locking).
-Next up: app launcher (wofi), then bar and wallpaper.
+Walker app launcher configured with custom Popping and Locking theme (Super+Space).
+Bluetooth enabled with bluetui TUI manager.
+Next up: status bar and further desktop polish.
 
 ## Future TODO
 
