@@ -22,6 +22,10 @@ Minimal Hyprland desktop, built incrementally.
 ├── bash/
 │   ├── .bash_profile   # shell profile (auto-starts Hyprland on TTY1)
 │   └── .bashrc         # interactive shell config (aliases, PATH)
+├── btop/
+│   ├── btop.conf                      # btop config
+│   └── themes/
+│       └── popping-and-locking.theme  # custom theme matching kitty colors
 ├── hypr/
 │   └── hyprland.conf   # Hyprland compositor config
 ├── iwd/
@@ -43,6 +47,7 @@ New directories are added as new tools are configured (waybar/, wofi/, etc.).
 |------------------------------|-------------------------------------|
 | `bash/.bash_profile`        | `~/.bash_profile`                   |
 | `bash/.bashrc`              | `~/.bashrc`                         |
+| `btop/`                     | `~/.config/btop/`                   |
 | `hypr/`                     | `~/.config/hypr/`                   |
 | `iwd/main.conf`             | `/etc/iwd/main.conf` (copied, not symlinked — iwd ignores symlinks) |
 | `kitty/`                    | `~/.config/kitty/`                  |
