@@ -33,6 +33,9 @@ PACKAGES=(
     # Editor
     neovim
 
+    # Networking
+    iwd
+
     # Utilities
     jq
 
@@ -42,3 +45,22 @@ PACKAGES=(
 
 echo "Installing pacman packages..."
 sudo pacman -S --needed "${PACKAGES[@]}"
+
+# --- yay (AUR helper) ---
+if ! command -v yay &>/dev/null; then
+    echo "Installing yay..."
+    sudo pacman -S --needed git base-devel
+    tmpdir=$(mktemp -d)
+    git clone https://aur.archlinux.org/yay.git "$tmpdir/yay"
+    (cd "$tmpdir/yay" && makepkg -si --noconfirm)
+    rm -rf "$tmpdir"
+fi
+
+# --- AUR packages ---
+AUR_PACKAGES=(
+    # Network TUI
+    impala
+)
+
+echo "Installing AUR packages..."
+yay -S --needed "${AUR_PACKAGES[@]}"

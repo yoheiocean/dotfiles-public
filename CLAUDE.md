@@ -24,6 +24,8 @@ Minimal Hyprland desktop, built incrementally.
 │   └── .bashrc         # interactive shell config (aliases, PATH)
 ├── hypr/
 │   └── hyprland.conf   # Hyprland compositor config
+├── iwd/
+│   └── main.conf       # iwd wireless daemon config
 ├── kitty/
 │   └── kitty.conf      # kitty terminal config
 └── mako/
@@ -39,6 +41,7 @@ New directories are added as new tools are configured (waybar/, wofi/, etc.).
 | `bash/.bash_profile`        | `~/.bash_profile`                   |
 | `bash/.bashrc`              | `~/.bashrc`                         |
 | `hypr/`                     | `~/.config/hypr/`                   |
+| `iwd/main.conf`             | `/etc/iwd/main.conf` (copied, not symlinked — iwd ignores symlinks) |
 | `kitty/`                    | `~/.config/kitty/`                  |
 | `mako/`                     | `~/.config/mako/`                   |
 

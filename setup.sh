@@ -50,4 +50,25 @@ for dir in "${CONFIGS[@]}"; do
     fi
 done
 
+# System-level configs (require sudo)
+echo ""
+echo "Linking system-level configs..."
+
+# iwd (copy, not symlink — iwd ignores symlinks to user-owned dirs)
+sudo mkdir -p /etc/iwd
+sudo cp "$DOTFILES/iwd/main.conf" /etc/iwd/main.conf
+echo "  iwd: copied"
+
+# Networking: iwd + systemd-resolved (no NetworkManager)
+echo ""
+echo "Configuring networking services..."
+sudo systemctl disable --now NetworkManager 2>/dev/null || true
+sudo systemctl disable --now wpa_supplicant 2>/dev/null || true
+sudo systemctl enable iwd
+sudo systemctl enable systemd-resolved
+
+# Point resolv.conf to systemd-resolved (iwd delegates DNS to it)
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+echo "  networking: iwd + systemd-resolved enabled"
+
 echo "Done."
