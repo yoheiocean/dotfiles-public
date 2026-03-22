@@ -13,6 +13,8 @@ PACKAGES=(
 
     # Terminal
     kitty
+    starship
+    ttf-jetbrains-mono-nerd
 
     # GPU (Intel UHD 620)
     mesa

@@ -27,9 +27,12 @@ Minimal Hyprland desktop, built incrementally.
 ├── iwd/
 │   └── main.conf       # iwd wireless daemon config
 ├── kitty/
-│   └── kitty.conf      # kitty terminal config
-└── mako/
-    └── config          # notification daemon config
+│   ├── kitty.conf           # kitty terminal config
+│   └── current-theme.conf   # kitty color theme (Popping and Locking)
+├── mako/
+│   └── config          # notification daemon config
+└── starship/
+    └── starship.toml   # starship prompt config (custom warm dark palette)
 ```
 
 New directories are added as new tools are configured (waybar/, wofi/, etc.).
@@ -44,10 +47,12 @@ New directories are added as new tools are configured (waybar/, wofi/, etc.).
 | `iwd/main.conf`             | `/etc/iwd/main.conf` (copied, not symlinked — iwd ignores symlinks) |
 | `kitty/`                    | `~/.config/kitty/`                  |
 | `mako/`                     | `~/.config/mako/`                   |
+| `starship/`                 | `~/.config/starship/`               |
 
 ## Current Goal
 
 Hyprland desktop is functional — launched via uwsm, kitty as terminal, basic keybinds, volume/brightness/media keys working.
+Terminal styled with Starship prompt (custom palette) and kitty theme (Popping and Locking).
 Next up: app launcher (wofi), then bar and wallpaper.
 
 ## Future TODO

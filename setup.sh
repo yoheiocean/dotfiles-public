@@ -11,6 +11,7 @@ CONFIGS=(
     hypr
     kitty
     mako
+    starship
 )
 
 # Files to symlink into ~/
