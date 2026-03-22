@@ -36,8 +36,18 @@ PACKAGES=(
     # Networking
     iwd
 
+    # Wallpaper
+    swww
+
     # Utilities
     jq
+    htop
+    btop
+    fzf
+    ripgrep
+    bat
+    eza
+    zoxide
 
     # Git / GitHub
     github-cli
