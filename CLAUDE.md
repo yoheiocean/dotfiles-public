@@ -38,6 +38,7 @@ Minimal Hyprland desktop, built incrementally.
 ├── hypridle/
 │   └── hypridle.conf     # idle daemon config (triggers TTE screensaver)
 ├── scripts/
+│   ├── cycle-wallpaper.sh  # cycle through wallpapers in ~/wallpapers
 │   ├── drift-wrapper.sh    # drift launcher with random theme selection
 │   ├── screensaver.txt     # ASCII art for TTE screensaver
 │   ├── tte-screensaver.sh  # TTE screensaver loop script
