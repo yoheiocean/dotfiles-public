@@ -38,8 +38,12 @@ Minimal Hyprland desktop, built incrementally.
 ├── hypridle/
 │   └── hypridle.conf     # idle daemon config (triggers TTE screensaver)
 ├── scripts/
+│   ├── add-webapp.sh       # add a web app (.desktop file with Brave --app)
+│   ├── commands.sh         # command center (Walker dmenu, Super+Alt+Space)
 │   ├── cycle-wallpaper.sh  # cycle through wallpapers in ~/wallpapers
 │   ├── drift-wrapper.sh    # drift launcher with random theme selection
+│   ├── keybinds.sh         # keybinds cheat sheet (parsed from hyprland.conf)
+│   ├── remove-webapp.sh    # remove a web app via Walker dmenu
 │   ├── screensaver.txt     # ASCII art for TTE screensaver
 │   ├── tte-screensaver.sh  # TTE screensaver loop script
 │   └── volume-status.sh    # volume JSON output for waybar custom module
@@ -73,7 +77,7 @@ Minimal Hyprland desktop, built incrementally.
 
 ## Current Goal
 
-Hyprland desktop is functional — launched via uwsm, kitty as terminal, basic keybinds, volume/brightness/media keys working.
+Hyprland desktop is functional — launched via uwsm, kitty as terminal, Brave as default browser, basic keybinds, volume/brightness/media keys working.
 Terminal styled with Starship prompt (custom palette) and kitty theme (Popping and Locking).
 Walker app launcher configured with custom Popping and Locking theme (Super+Space).
 Bluetooth enabled with bluetui TUI manager.
@@ -81,6 +85,8 @@ Waybar status bar configured with workspaces, clock, battery, volume, backlight,
 Window rules set up for floating TUI popups (fastfetch, tclock, btop, bluetui, impala).
 Drift terminal screensaver with random theme cycling on shell idle (2 min).
 TTE screensaver with centered ASCII art triggered by hypridle on system idle (5 min).
+Command center (Super+Alt+Space) for system actions, web app management, keybinds cheat sheet.
+Web apps support — add/remove web apps that open in Brave app mode and appear in Walker.
 
 ## Future TODO
 

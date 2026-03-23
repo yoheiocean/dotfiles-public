@@ -70,6 +70,9 @@ PACKAGES=(
     rust
     go
 
+    # Browser
+    xdg-utils
+
     # Git / GitHub
     github-cli
 )
@@ -97,6 +100,9 @@ AUR_PACKAGES=(
 
     # Terminal text effects (screensaver)
     python-terminaltexteffects
+
+    # Browser
+    brave-bin
 
     # App launcher
     walker

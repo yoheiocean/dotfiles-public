@@ -88,4 +88,10 @@ echo "Enabling elephant..."
 elephant service enable
 echo "  elephant: enabled"
 
+# Default browser
+echo ""
+echo "Setting default browser..."
+xdg-settings set default-web-browser brave-browser.desktop
+echo "  browser: Brave set as default"
+
 echo "Done."
