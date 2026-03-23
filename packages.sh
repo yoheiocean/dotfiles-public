@@ -46,6 +46,9 @@ PACKAGES=(
     bluez-utils
     bluetui
 
+    # Idle daemon
+    hypridle
+
     # Status bar
     waybar
 
@@ -65,6 +68,7 @@ PACKAGES=(
 
     # Build tools
     rust
+    go
 
     # Git / GitHub
     github-cli
@@ -90,6 +94,9 @@ AUR_PACKAGES=(
 
     # Terminal clock
     clock-tui
+
+    # Terminal text effects (screensaver)
+    python-terminaltexteffects
 
     # App launcher
     walker

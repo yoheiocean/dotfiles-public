@@ -35,8 +35,13 @@ Minimal Hyprland desktop, built incrementally.
 │   └── current-theme.conf   # kitty color theme (Popping and Locking)
 ├── mako/
 │   └── config          # notification daemon config
+├── hypridle/
+│   └── hypridle.conf     # idle daemon config (triggers TTE screensaver)
 ├── scripts/
-│   └── volume-status.sh  # volume JSON output for waybar custom module
+│   ├── drift-wrapper.sh    # drift launcher with random theme selection
+│   ├── screensaver.txt     # ASCII art for TTE screensaver
+│   ├── tte-screensaver.sh  # TTE screensaver loop script
+│   └── volume-status.sh    # volume JSON output for waybar custom module
 ├── starship/
 │   └── starship.toml   # starship prompt config (custom warm dark palette)
 ├── walker/
@@ -55,6 +60,7 @@ Minimal Hyprland desktop, built incrementally.
 | `bash/.bash_profile`        | `~/.bash_profile`                   |
 | `bash/.bashrc`              | `~/.bashrc`                         |
 | `btop/`                     | `~/.config/btop/`                   |
+| `hypridle/`                 | `~/.config/hypridle/`               |
 | `hypr/`                     | `~/.config/hypr/`                   |
 | `iwd/main.conf`             | `/etc/iwd/main.conf` (copied, not symlinked — iwd ignores symlinks) |
 | `kitty/`                    | `~/.config/kitty/`                  |
@@ -72,6 +78,8 @@ Walker app launcher configured with custom Popping and Locking theme (Super+Spac
 Bluetooth enabled with bluetui TUI manager.
 Waybar status bar configured with workspaces, clock, battery, volume, backlight, bluetooth, network, and system tray.
 Window rules set up for floating TUI popups (fastfetch, tclock, btop, bluetui, impala).
+Drift terminal screensaver with random theme cycling on shell idle (2 min).
+TTE screensaver with centered ASCII art triggered by hypridle on system idle (5 min).
 
 ## Future TODO
 

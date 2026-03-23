@@ -37,7 +37,7 @@
     "clock#time": {
         "format": "  {:%H:%M}",
         "tooltip": false,
-        "on-click": "kitty --title tclock -o window_padding_width=20 -e tclock -c '#DD8542'"
+        "on-click": "kitty --title tclock -o window_padding_width=20 -o font_size=8 -e tclock -s 1 -c '#DD8542'"
     },
 
     "temperature": {

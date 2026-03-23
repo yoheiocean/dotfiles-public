@@ -9,6 +9,7 @@ DOTFILES="$HOME/dotfiles"
 # Directories to symlink into ~/.config/
 CONFIGS=(
     btop
+    hypridle
     hypr
     kitty
     mako
