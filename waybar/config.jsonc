@@ -6,7 +6,7 @@
 
     "modules-left": ["custom/arch", "hyprland/workspaces"],
     "modules-center": ["clock#date"],
-    "modules-right": ["temperature", "battery", "backlight", "custom/volume", "bluetooth", "network", "custom/vpn", "tray", "clock#time"],
+    "modules-right": ["temperature", "battery", "backlight", "custom/volume", "bluetooth", "network", "custom/vpn", "custom/ime", "tray", "clock#time"],
 
     "custom/arch": {
         "format": " 󰣇 ",
@@ -25,13 +25,8 @@
 
     "clock#date": {
         "format": "  {:%A, %B %d, %Y}",
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "weeks-pos": "",
-            "format": {
-                "today": "<span color='#DD8542'><b>{}</b></span>"
-            }
-        }
+        "tooltip": false,
+        "on-click": "kitty --title calcure -e calcure"
     },
 
     "clock#time": {
@@ -97,6 +92,15 @@
         "on-click": "~/dotfiles/scripts/vpn-toggle.sh",
         "interval": 10,
         "signal": 1,
+        "tooltip": true
+    },
+
+    "custom/ime": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/dotfiles/scripts/ime-status.sh",
+        "on-click": "fcitx5-remote -t",
+        "interval": 1,
         "tooltip": true
     },
 

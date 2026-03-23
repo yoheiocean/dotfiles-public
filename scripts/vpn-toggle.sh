@@ -13,13 +13,15 @@ if [[ -n "$active" ]]; then
     sudo wg-quick down "$active" 2>/dev/null
     rm -f /tmp/vpn-connecting
 else
-    # VPN is off — reconnect last used config
+    # VPN is off — reconnect last used config, or pick one if none saved
     if [[ -f "$LAST_FILE" ]]; then
         config=$(cat "$LAST_FILE")
         echo "connecting" > /tmp/vpn-connecting
         pkill -SIGRTMIN+1 waybar 2>/dev/null || true
         sudo wg-quick up "$config" 2>/dev/null
         rm -f /tmp/vpn-connecting
+    else
+        exec "$(dirname "$0")/vpn-connect.sh"
     fi
 fi
 

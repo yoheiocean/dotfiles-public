@@ -75,6 +75,16 @@ PACKAGES=(
     zoxide
     fastfetch
 
+    # Japanese fonts
+    noto-fonts-cjk
+
+    # Input method (Japanese)
+    fcitx5
+    fcitx5-mozc
+    fcitx5-gtk
+    fcitx5-qt
+    fcitx5-configtool
+
     # Build tools
     rust
     go
@@ -116,6 +126,9 @@ AUR_PACKAGES=(
 
     # Screenshot
     hyprshot
+
+    # Calendar TUI
+    calcure
 
     # App launcher
     walker

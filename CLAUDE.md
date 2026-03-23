@@ -52,6 +52,7 @@ Minimal Hyprland desktop, built incrementally.
 │   ├── vpn-toggle.sh        # toggle active VPN on/off (waybar on-click)
 │   ├── wireguard-helper.sh  # sudo helper for wireguard config file operations
 │   ├── add-vpn.sh           # add a WireGuard VPN config
+│   ├── ime-status.sh        # IME status JSON output for waybar (EN/あ)
 ├── starship/
 │   └── starship.toml   # starship prompt config (custom warm dark palette)
 ├── walker/
@@ -92,12 +93,14 @@ TTE screensaver with centered ASCII art triggered by hypridle on system idle (5 
 Command center (Super+Alt+Space) for system actions, web app management, keybinds cheat sheet.
 Web apps support — add/remove web apps that open in Brave app mode and appear in Walker.
 WireGuard VPN — add/connect/remove configs via command center, waybar toggle, scoped sudoers.
+Japanese input — fcitx5 + Mozc, Super+grave toggle, waybar EN/あ indicator, CJK fonts installed.
 
 ## Future TODO
 
 - **OSD notifications for hardware keys** — visual/audio feedback when pressing volume, brightness, and media keys (e.g. an on-screen display showing current level)
 - **Global copy/paste/select-all keybinds** — consider Super+C/V/A mapping for GUI apps once they're in use
-- **Japanese language support** — fonts, input method (fcitx5/ibus), locale config
+- **Japanese input — hide fcitx5 tray icons** — waybar custom/ime module already shows EN/あ, but fcitx5 tray icons still appear (notificationitem addon disable didn't work)
+- **Japanese input — locale config** — LANG/LC_* variables not yet set in bash config
 - **Neovim customization** — themes, plugins, LSP setup
 
 ## Hardware
