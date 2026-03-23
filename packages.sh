@@ -56,6 +56,11 @@ PACKAGES=(
     # Status bar
     waybar
 
+    # Screenshot
+    grim
+    slurp
+    libnotify
+
     # Wallpaper
     swww
 
@@ -74,8 +79,9 @@ PACKAGES=(
     rust
     go
 
-    # Browser
+    # XDG
     xdg-utils
+    xdg-user-dirs
 
     # Git / GitHub
     github-cli
@@ -107,6 +113,9 @@ AUR_PACKAGES=(
 
     # Browser
     brave-bin
+
+    # Screenshot
+    hyprshot
 
     # App launcher
     walker

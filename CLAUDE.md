@@ -27,7 +27,8 @@ Minimal Hyprland desktop, built incrementally.
 │   └── themes/
 │       └── popping-and-locking.theme  # custom theme matching kitty colors
 ├── hypr/
-│   └── hyprland.conf   # Hyprland compositor config
+│   ├── hyprland.conf     # Hyprland compositor config
+│   └── hypridle.conf     # idle daemon config (triggers TTE screensaver)
 ├── iwd/
 │   └── main.conf       # iwd wireless daemon config
 ├── kitty/
@@ -35,8 +36,6 @@ Minimal Hyprland desktop, built incrementally.
 │   └── current-theme.conf   # kitty color theme (Popping and Locking)
 ├── mako/
 │   └── config          # notification daemon config
-├── hypridle/
-│   └── hypridle.conf     # idle daemon config (triggers TTE screensaver)
 ├── scripts/
 │   ├── add-webapp.sh       # add a web app (.desktop file with Brave --app)
 │   ├── commands.sh         # command center (Walker dmenu, Super+Alt+Space)
@@ -71,7 +70,6 @@ Minimal Hyprland desktop, built incrementally.
 | `bash/.bash_profile`        | `~/.bash_profile`                   |
 | `bash/.bashrc`              | `~/.bashrc`                         |
 | `btop/`                     | `~/.config/btop/`                   |
-| `hypridle/`                 | `~/.config/hypridle/`               |
 | `hypr/`                     | `~/.config/hypr/`                   |
 | `iwd/main.conf`             | `/etc/iwd/main.conf` (copied, not symlinked — iwd ignores symlinks) |
 | `kitty/`                    | `~/.config/kitty/`                  |
@@ -98,8 +96,9 @@ WireGuard VPN — add/connect/remove configs via command center, waybar toggle, 
 ## Future TODO
 
 - **OSD notifications for hardware keys** — visual/audio feedback when pressing volume, brightness, and media keys (e.g. an on-screen display showing current level)
-- **GUI control center** — a visual settings panel for volume, brightness, network, etc.
 - **Global copy/paste/select-all keybinds** — consider Super+C/V/A mapping for GUI apps once they're in use
+- **Japanese language support** — fonts, input method (fcitx5/ibus), locale config
+- **Neovim customization** — themes, plugins, LSP setup
 
 ## Hardware
 

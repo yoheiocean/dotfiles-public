@@ -9,7 +9,6 @@ DOTFILES="$HOME/dotfiles"
 # Directories to symlink into ~/.config/
 CONFIGS=(
     btop
-    hypridle
     hypr
     kitty
     mako
@@ -97,8 +96,14 @@ sudo tee /etc/sudoers.d/wireguard > /dev/null <<SUDOERS
 SUDOERS
 # Allow wheel group to list wireguard configs (directory is root-only by default)
 sudo chmod 755 /etc/wireguard
-sudo chmod 440 /etc/sudoers.d/wg-quick
+sudo chmod 440 /etc/sudoers.d/wireguard
 echo "  vpn: sudoers configured"
+
+# XDG user directories (~/Pictures, ~/Downloads, etc.)
+echo ""
+echo "Setting up XDG user directories..."
+xdg-user-dirs-update
+echo "  xdg-user-dirs: configured"
 
 # Default browser
 echo ""
