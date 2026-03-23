@@ -1,0 +1,97 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 0,
+
+    "modules-left": ["custom/arch", "hyprland/workspaces"],
+    "modules-center": ["clock#date"],
+    "modules-right": ["temperature", "battery", "backlight", "custom/volume", "bluetooth", "network", "tray", "clock#time"],
+
+    "custom/arch": {
+        "format": " 󰣇 ",
+        "tooltip": false,
+        "on-click": "kitty --title fastfetch -o window_padding_width=20 -e bash -c 'fastfetch; read -n1 -s -r -p \"Press any key to close...\"'"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    "clock#date": {
+        "format": "  {:%A, %B %d, %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "weeks-pos": "",
+            "format": {
+                "today": "<span color='#DD8542'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "clock#time": {
+        "format": "  {:%H:%M}",
+        "tooltip": false,
+        "on-click": "kitty --title tclock -o window_padding_width=20 -e tclock -c '#DD8542'"
+    },
+
+    "temperature": {
+        "format": "CPU {temperatureC}°C",
+        "tooltip": false,
+        "on-click": "kitty --title btop -e btop"
+    },
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip": false
+    },
+
+    "custom/volume": {
+        "exec": "~/dotfiles/scripts/volume-status.sh",
+        "return-type": "json",
+        "interval": 2,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱  {num_connections}",
+        "format-disabled": "󰂲",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "kitty --title bluetui -e bluetui"
+    },
+
+    "network": {
+        "format-wifi": "󰤨",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤭",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}",
+        "on-click": "kitty --title impala -e impala"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    }
+}

@@ -29,6 +29,9 @@ PACKAGES=(
     # Notification daemon
     mako
 
+    # Brightness
+    brightnessctl
+
     # Clipboard
     wl-clipboard
 
@@ -43,6 +46,9 @@ PACKAGES=(
     bluez-utils
     bluetui
 
+    # Status bar
+    waybar
+
     # Wallpaper
     swww
 
@@ -56,6 +62,9 @@ PACKAGES=(
     eza
     zoxide
     fastfetch
+
+    # Build tools
+    rust
 
     # Git / GitHub
     github-cli
@@ -78,6 +87,9 @@ fi
 AUR_PACKAGES=(
     # Network TUI
     impala
+
+    # Terminal clock
+    clock-tui
 
     # App launcher
     walker

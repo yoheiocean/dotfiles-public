@@ -35,16 +35,18 @@ Minimal Hyprland desktop, built incrementally.
 │   └── current-theme.conf   # kitty color theme (Popping and Locking)
 ├── mako/
 │   └── config          # notification daemon config
+├── scripts/
+│   └── volume-status.sh  # volume JSON output for waybar custom module
 ├── starship/
 │   └── starship.toml   # starship prompt config (custom warm dark palette)
-└── walker/
-    ├── config.toml     # walker app launcher config
-    └── themes/
-        └── popping-and-locking/
-            └── style.css  # custom theme matching kitty/starship colors
-```
-
-New directories are added as new tools are configured (waybar/, etc.).
+├── walker/
+│   ├── config.toml     # walker app launcher config
+│   └── themes/
+│       └── popping-and-locking/
+│           └── style.css  # custom theme matching kitty/starship colors
+└── waybar/
+    ├── config.jsonc    # waybar modules (workspaces, clock, battery, volume, etc.)
+    └── style.css       # waybar styling
 
 ## Symlink Mapping
 
@@ -58,7 +60,9 @@ New directories are added as new tools are configured (waybar/, etc.).
 | `kitty/`                    | `~/.config/kitty/`                  |
 | `mako/`                     | `~/.config/mako/`                   |
 | `starship/`                 | `~/.config/starship/`               |
+| `scripts/`                  | `~/dotfiles/scripts/` (referenced in place, not symlinked) |
 | `walker/`                   | `~/.config/walker/`                 |
+| `waybar/`                   | `~/.config/waybar/`                 |
 
 ## Current Goal
 
@@ -66,7 +70,8 @@ Hyprland desktop is functional — launched via uwsm, kitty as terminal, basic k
 Terminal styled with Starship prompt (custom palette) and kitty theme (Popping and Locking).
 Walker app launcher configured with custom Popping and Locking theme (Super+Space).
 Bluetooth enabled with bluetui TUI manager.
-Next up: status bar and further desktop polish.
+Waybar status bar configured with workspaces, clock, battery, volume, backlight, bluetooth, network, and system tray.
+Window rules set up for floating TUI popups (fastfetch, tclock, btop, bluetui, impala).
 
 ## Future TODO
 

@@ -14,6 +14,7 @@ CONFIGS=(
     mako
     starship
     walker
+    waybar
 )
 
 # Files to symlink into ~/
