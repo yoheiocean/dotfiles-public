@@ -81,6 +81,7 @@ tooltip label {
 #custom-volume,
 #bluetooth,
 #network,
+#custom-vpn,
 #tray {
     padding: 0 10px;
     color: @fg;
@@ -103,5 +104,17 @@ tooltip label {
 }
 
 #network.disconnected {
+    color: @dim;
+}
+
+#custom-vpn.connected {
+    color: @teal;
+}
+
+#custom-vpn.connecting {
+    color: @copper;
+}
+
+#custom-vpn.disconnected {
     color: @dim;
 }

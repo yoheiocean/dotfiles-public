@@ -42,11 +42,17 @@ Minimal Hyprland desktop, built incrementally.
 │   ├── commands.sh         # command center (Walker dmenu, Super+Alt+Space)
 │   ├── cycle-wallpaper.sh  # cycle through wallpapers in ~/wallpapers
 │   ├── drift-wrapper.sh    # drift launcher with random theme selection
-│   ├── keybinds.sh         # keybinds cheat sheet (parsed from hyprland.conf)
-│   ├── remove-webapp.sh    # remove a web app via Walker dmenu
-│   ├── screensaver.txt     # ASCII art for TTE screensaver
-│   ├── tte-screensaver.sh  # TTE screensaver loop script
-│   └── volume-status.sh    # volume JSON output for waybar custom module
+│   ├── keybinds.sh           # keybinds cheat sheet (parsed from hyprland.conf)
+│   ├── remove-vpn.sh        # remove a WireGuard VPN config via Walker dmenu
+│   ├── remove-webapp.sh     # remove a web app via Walker dmenu
+│   ├── screensaver.txt      # ASCII art for TTE screensaver
+│   ├── tte-screensaver.sh   # TTE screensaver loop script
+│   ├── volume-status.sh     # volume JSON output for waybar custom module
+│   ├── vpn-connect.sh       # connect to a VPN via Walker dmenu
+│   ├── vpn-status.sh        # VPN status JSON output for waybar
+│   ├── vpn-toggle.sh        # toggle active VPN on/off (waybar on-click)
+│   ├── wireguard-helper.sh  # sudo helper for wireguard config file operations
+│   ├── add-vpn.sh           # add a WireGuard VPN config
 ├── starship/
 │   └── starship.toml   # starship prompt config (custom warm dark palette)
 ├── walker/
@@ -87,6 +93,7 @@ Drift terminal screensaver with random theme cycling on shell idle (2 min).
 TTE screensaver with centered ASCII art triggered by hypridle on system idle (5 min).
 Command center (Super+Alt+Space) for system actions, web app management, keybinds cheat sheet.
 Web apps support — add/remove web apps that open in Brave app mode and appear in Walker.
+WireGuard VPN — add/connect/remove configs via command center, waybar toggle, scoped sudoers.
 
 ## Future TODO
 

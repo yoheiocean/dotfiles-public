@@ -46,6 +46,10 @@ PACKAGES=(
     bluez-utils
     bluetui
 
+    # VPN
+    wireguard-tools
+    systemd-resolvconf
+
     # Idle daemon
     hypridle
 

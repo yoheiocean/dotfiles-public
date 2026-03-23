@@ -88,6 +88,18 @@ echo "Enabling elephant..."
 elephant service enable
 echo "  elephant: enabled"
 
+# WireGuard VPN (passwordless wg-quick)
+echo ""
+echo "Configuring VPN sudoers..."
+sudo mkdir -p /etc/wireguard
+sudo tee /etc/sudoers.d/wireguard > /dev/null <<SUDOERS
+%wheel ALL=(ALL) NOPASSWD: /usr/bin/wg-quick, $HOME/dotfiles/scripts/wireguard-helper.sh
+SUDOERS
+# Allow wheel group to list wireguard configs (directory is root-only by default)
+sudo chmod 755 /etc/wireguard
+sudo chmod 440 /etc/sudoers.d/wg-quick
+echo "  vpn: sudoers configured"
+
 # Default browser
 echo ""
 echo "Setting default browser..."

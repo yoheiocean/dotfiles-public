@@ -6,7 +6,7 @@
 
     "modules-left": ["custom/arch", "hyprland/workspaces"],
     "modules-center": ["clock#date"],
-    "modules-right": ["temperature", "battery", "backlight", "custom/volume", "bluetooth", "network", "tray", "clock#time"],
+    "modules-right": ["temperature", "battery", "backlight", "custom/volume", "bluetooth", "network", "custom/vpn", "tray", "clock#time"],
 
     "custom/arch": {
         "format": " 󰣇 ",
@@ -88,6 +88,16 @@
         "format-disconnected": "󰤭",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}",
         "on-click": "kitty --title impala -e impala"
+    },
+
+    "custom/vpn": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/dotfiles/scripts/vpn-status.sh",
+        "on-click": "~/dotfiles/scripts/vpn-toggle.sh",
+        "interval": 10,
+        "signal": 1,
+        "tooltip": true
     },
 
     "tray": {

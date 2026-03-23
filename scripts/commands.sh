@@ -5,6 +5,9 @@
 entries=(
     "Add Web App"
     "Remove Web App"
+    "Add VPN"
+    "Connect VPN"
+    "Remove VPN"
     "Keybinds"
     "Bluetooth"
     "Network"
@@ -17,6 +20,9 @@ entries=(
 declare -A commands=(
     ["Add Web App"]="kitty --title add-webapp $HOME/dotfiles/scripts/add-webapp.sh"
     ["Remove Web App"]="$HOME/dotfiles/scripts/remove-webapp.sh"
+    ["Add VPN"]="kitty --title add-vpn $HOME/dotfiles/scripts/add-vpn.sh"
+    ["Connect VPN"]="$HOME/dotfiles/scripts/vpn-connect.sh"
+    ["Remove VPN"]="$HOME/dotfiles/scripts/remove-vpn.sh"
     ["Keybinds"]="$HOME/dotfiles/scripts/keybinds.sh"
     ["Bluetooth"]="kitty --title bluetui bluetui"
     ["Network"]="kitty --title impala impala"
