@@ -19,6 +19,8 @@ jobs:
 
       - name: Push to public repo
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           mkdir -p ~/.ssh
           echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/deploy-key
           chmod 600 ~/.ssh/deploy-key
