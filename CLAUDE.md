@@ -99,7 +99,6 @@ Japanese input — fcitx5 + Mozc, Super+grave toggle, waybar EN/あ indicator, C
 
 - **OSD notifications for hardware keys** — visual/audio feedback when pressing volume, brightness, and media keys (e.g. an on-screen display showing current level)
 - **Global copy/paste/select-all keybinds** — consider Super+C/V/A mapping for GUI apps once they're in use
-- **Japanese input — hide fcitx5 tray icons** — waybar custom/ime module already shows EN/あ, but fcitx5 tray icons still appear (notificationitem addon disable didn't work)
 - **Japanese input — locale config** — LANG/LC_* variables not yet set in bash config
 - **Neovim customization** — themes, plugins, LSP setup
 
