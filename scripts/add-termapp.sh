@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
-# Add a web app — creates a .desktop file that opens Brave in app mode.
+# Add a terminal app — creates a .desktop file that opens kitty with a command.
 # Launched from the command center (Walker).
 
 set -euo pipefail
 
-ICONS_DIR="$HOME/.local/share/icons/webapps"
+ICONS_DIR="$HOME/.local/share/icons/termapps"
 APPS_DIR="$HOME/.local/share/applications"
 mkdir -p "$ICONS_DIR" "$APPS_DIR"
 
 read -rp "Name: " name
 [[ -z "$name" ]] && exit 1
 
-read -rp "URL: " url
-[[ -z "$url" ]] && exit 1
+read -rp "Command: " cmd
+[[ -z "$cmd" ]] && exit 1
 
 read -rp "Icon (URL or local path): " icon_src
 [[ -z "$icon_src" ]] && exit 1
@@ -33,19 +33,19 @@ else
 fi
 
 # Create .desktop file
-desktop_file="$APPS_DIR/webapp-$slug.desktop"
+desktop_file="$APPS_DIR/termapp-$slug.desktop"
 cat > "$desktop_file" <<EOF
 [Desktop Entry]
 Name=$name
-Exec=brave --app=$url
+Exec=kitty --title $slug -e $cmd
 Icon=$icon_path
 Type=Application
-Categories=WebApp;
+Categories=TermApp;
 EOF
 
 # Update desktop database and restart Elephant so Walker picks it up
 update-desktop-database "$APPS_DIR" 2>/dev/null || true
 systemctl --user restart elephant 2>/dev/null || true
 
-echo "Web app '$name' added."
+echo "Terminal app '$name' added."
 read -rp "Press Enter to close..."

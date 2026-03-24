@@ -36,6 +36,7 @@ scrollbar {
   padding: 20px;
   border-radius: 0;
   border: 1px solid @accent_bg_color;
+  min-height: 800px;
 }
 
 .preview-box,
@@ -46,6 +47,7 @@ scrollbar {
 
 .search-container {
   border-radius: 0;
+  margin-top: 24px;
 }
 
 .input placeholder {
@@ -64,6 +66,7 @@ scrollbar {
 }
 
 .content-container {
+  margin-top: 24px;
 }
 
 .list {

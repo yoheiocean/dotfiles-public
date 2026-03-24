@@ -37,11 +37,13 @@ Minimal Hyprland desktop, built incrementally.
 ├── mako/
 │   └── config          # notification daemon config
 ├── scripts/
+│   ├── add-termapp.sh      # add a terminal app (.desktop file with kitty -e)
 │   ├── add-webapp.sh       # add a web app (.desktop file with Brave --app)
 │   ├── commands.sh         # command center (Walker dmenu, Super+Alt+Space)
 │   ├── cycle-wallpaper.sh  # cycle through wallpapers in ~/wallpapers
 │   ├── drift-wrapper.sh    # drift launcher with random theme selection
 │   ├── keybinds.sh           # keybinds cheat sheet (parsed from hyprland.conf)
+│   ├── remove-termapp.sh    # remove a terminal app via Walker dmenu
 │   ├── remove-vpn.sh        # remove a WireGuard VPN config via Walker dmenu
 │   ├── remove-webapp.sh     # remove a web app via Walker dmenu
 │   ├── screensaver.txt      # ASCII art for TTE screensaver
@@ -53,6 +55,7 @@ Minimal Hyprland desktop, built incrementally.
 │   ├── wireguard-helper.sh  # sudo helper for wireguard config file operations
 │   ├── add-vpn.sh           # add a WireGuard VPN config
 │   ├── ime-status.sh        # IME status JSON output for waybar (EN/あ)
+│   ├── toggle-app.sh        # toggle app visibility in Walker (NoDisplay override)
 ├── starship/
 │   └── starship.toml   # starship prompt config (custom warm dark palette)
 ├── walker/
@@ -92,6 +95,8 @@ Drift terminal screensaver with random theme cycling on shell idle (2 min).
 TTE screensaver with centered ASCII art triggered by hypridle on system idle (5 min).
 Command center (Super+Alt+Space) for system actions, web app management, keybinds cheat sheet.
 Web apps support — add/remove web apps that open in Brave app mode and appear in Walker.
+Terminal apps support — add/remove terminal apps that open in kitty and appear in Walker.
+App visibility toggle — hide/show any app in Walker via NoDisplay desktop overrides.
 WireGuard VPN — add/connect/remove configs via command center, waybar toggle, scoped sudoers.
 Japanese input — fcitx5 + Mozc, Super+grave toggle, waybar EN/あ indicator, CJK fonts installed.
 

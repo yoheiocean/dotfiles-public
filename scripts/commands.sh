@@ -5,6 +5,9 @@
 entries=(
     "Add Web App"
     "Remove Web App"
+    "Add Terminal App"
+    "Remove Terminal App"
+    "Toggle App Visibility"
     "Add VPN"
     "Connect VPN"
     "Remove VPN"
@@ -20,6 +23,9 @@ entries=(
 declare -A commands=(
     ["Add Web App"]="kitty --title add-webapp $HOME/dotfiles/scripts/add-webapp.sh"
     ["Remove Web App"]="$HOME/dotfiles/scripts/remove-webapp.sh"
+    ["Add Terminal App"]="kitty --title add-termapp $HOME/dotfiles/scripts/add-termapp.sh"
+    ["Remove Terminal App"]="$HOME/dotfiles/scripts/remove-termapp.sh"
+    ["Toggle App Visibility"]="$HOME/dotfiles/scripts/toggle-app.sh"
     ["Add VPN"]="kitty --title add-vpn $HOME/dotfiles/scripts/add-vpn.sh"
     ["Connect VPN"]="$HOME/dotfiles/scripts/vpn-connect.sh"
     ["Remove VPN"]="$HOME/dotfiles/scripts/remove-vpn.sh"
