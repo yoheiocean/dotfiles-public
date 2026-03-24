@@ -2,19 +2,49 @@
 
 Minimal Hyprland desktop on Arch Linux. Configs are symlinked from this repo to their expected locations.
 
+## Screenshots
+
+![Desktop](screenshots/desktop.png)
+*Tiled layout with terminal, btop, tclock, and pipes*
+
+![Fastfetch](screenshots/fastfetch.png)
+*Floating fastfetch popup with system info*
+
+![Command Center](screenshots/command-center.png)
+*Command center (Super+Alt+Space) — manage apps, VPNs, and system actions*
+
 ## What's included
 
-- **Hyprland** — tiling Wayland compositor, launched via uwsm
-- **Kitty** — terminal (Popping and Locking theme, JetBrains Mono Nerd Font)
-- **Starship** — shell prompt (custom warm dark palette)
-- **Walker** — app launcher (Super+Space)
-- **Waybar** — status bar (workspaces, clock, battery, volume, VPN, IME, etc.)
-- **Mako** — notification daemon
-- **Neovim** — editor (lazy.nvim + gruvbox-material)
-- **iwd** — wireless networking (replaces NetworkManager)
-- **WireGuard** — VPN management via command center
-- **fcitx5 + Mozc** — Japanese input
-- **Brave** — default browser, with web app support
+### Desktop environment
+- **Hyprland** — tiling Wayland compositor, launched via uwsm with auto-start on TTY1 login
+- **Waybar** — status bar with workspaces, clock, battery, volume, backlight, bluetooth, network, VPN status, and IME indicator
+- **Mako** — notification daemon with blur and transparency
+- **Walker** — app launcher (Super+Space) with custom Popping and Locking theme
+
+### Terminal
+- **Kitty** — GPU-accelerated terminal with Popping and Locking color theme and JetBrains Mono Nerd Font
+- **Starship** — shell prompt with a custom warm dark palette
+- **Neovim** — editor configured with lazy.nvim plugin manager and gruvbox-material theme
+
+### Screensavers
+- **Drift** — terminal screensaver with random theme cycling, triggered after 2 min shell idle
+- **TTE** — system screensaver with centered ASCII art, triggered by hypridle after 5 min system idle
+
+### Networking & VPN
+- **iwd + systemd-resolved** — lightweight wireless networking (replaces NetworkManager)
+- **impala** — floating TUI for managing Wi-Fi connections
+- **WireGuard** — add, connect, remove, and toggle VPN configs via command center and waybar, with scoped passwordless sudo
+
+### Apps & input
+- **Brave** — default browser with web app support (add/remove via command center, opens in app mode)
+- **Terminal apps** — add/remove terminal apps that open in kitty and appear in Walker
+- **App visibility toggle** — hide/show any app in Walker via NoDisplay desktop overrides
+- **fcitx5 + Mozc** — Japanese input with Super+grave toggle and waybar EN/あ indicator
+
+### System tools
+- **btop** — system monitor with custom Popping and Locking theme
+- **bluetui** — bluetooth TUI manager
+- **Command center** (Super+Alt+Space) — centralized dmenu for web apps, terminal apps, VPNs, keybinds, bluetooth, network, screensaver, and power actions
 
 ## Prerequisites
 
