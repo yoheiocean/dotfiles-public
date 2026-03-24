@@ -2,6 +2,8 @@
 
 Minimal Hyprland desktop on Arch Linux. Configs are symlinked from this repo to their expected locations.
 
+This entire rice was built through conversation with [Claude Code](https://claude.ai/claude-code) — from package selection to config files to helper scripts. If you're curious about the CLAUDE.md that guided the process, feel free to ask.
+
 ## Screenshots
 
 ![Desktop](screenshots/desktop.png)
