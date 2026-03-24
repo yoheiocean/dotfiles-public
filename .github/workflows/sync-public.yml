@@ -14,7 +14,7 @@ jobs:
 
       - name: Remove private files
         run: |
-          rm -f CLAUDE.md
+          rm -f CLAUDE.md PROGRESS.md
           rm -rf .github
 
       - name: Push to public repo
