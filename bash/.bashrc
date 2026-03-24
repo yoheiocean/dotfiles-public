@@ -19,14 +19,16 @@ export PATH="$(go env GOPATH 2>/dev/null)/bin:$PATH"
 eval "$(zoxide init bash)"
 
 # Drift screensaver (activates after idle, random theme each launch)
-export DRIFT_TIMEOUT=120
-eval "$(~/go/bin/drift shell-init bash)"
-drift() {
-    _DRIFT_THEMES=(cosmic nord dracula catppuccin gruvbox forest wildberries mono rosepine)
-    _THEME=${_DRIFT_THEMES[$((RANDOM % ${#_DRIFT_THEMES[@]}))]}
-    sed -i "s/^theme.*=.*/theme         = \"$_THEME\"/" "$HOME/.config/drift/config.toml"
-    ~/go/bin/drift "$@"
-}
+if [ -x "$HOME/go/bin/drift" ]; then
+    export DRIFT_TIMEOUT=120
+    eval "$(~/go/bin/drift shell-init bash)"
+    drift() {
+        _DRIFT_THEMES=(cosmic nord dracula catppuccin gruvbox forest wildberries mono rosepine)
+        _THEME=${_DRIFT_THEMES[$((RANDOM % ${#_DRIFT_THEMES[@]}))]}
+        sed -i "s/^theme.*=.*/theme         = \"$_THEME\"/" "$HOME/.config/drift/config.toml"
+        ~/go/bin/drift "$@"
+    }
+fi
 
 # Starship prompt
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"

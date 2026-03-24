@@ -1,0 +1,13 @@
+[Hotkey]
+TriggerKeys=
+EnumerateWithTriggerKeys=True
+EnumerateSkipFirst=False
+
+[Hotkey/TriggerKeys]
+0=Alt+`
+
+[Hotkey/EnumerateForwardKeys]
+0=Alt+`
+
+[Hotkey/EnumerateBackwardKeys]
+0=Alt+Shift+`

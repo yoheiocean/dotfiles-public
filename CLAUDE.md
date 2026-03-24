@@ -26,6 +26,15 @@ Minimal Hyprland desktop, built incrementally.
 │   ├── btop.conf                      # btop config
 │   └── themes/
 │       └── popping-and-locking.theme  # custom theme matching kitty colors
+├── calcure/
+│   ├── config.ini    # calcure calendar config (birthdays_from_abook=No)
+│   ├── events.csv    # calcure events data
+│   └── tasks.csv     # calcure tasks data
+├── drift/
+│   └── config.toml   # drift screensaver config (scenes, themes)
+├── fcitx5/
+│   ├── config        # fcitx5 hotkey config
+│   └── profile       # fcitx5 input method profile (keyboard-us + mozc)
 ├── hypr/
 │   ├── hyprland.conf     # Hyprland compositor config
 │   └── hypridle.conf     # idle daemon config (triggers TTE screensaver)
@@ -76,6 +85,9 @@ Minimal Hyprland desktop, built incrementally.
 | `bash/.bash_profile`        | `~/.bash_profile`                   |
 | `bash/.bashrc`              | `~/.bashrc`                         |
 | `btop/`                     | `~/.config/btop/`                   |
+| `calcure/`                  | `~/.config/calcure/`                |
+| `drift/`                    | `~/.config/drift/`                  |
+| `fcitx5/`                   | `~/.config/fcitx5/`                 |
 | `hypr/`                     | `~/.config/hypr/`                   |
 | `iwd/main.conf`             | `/etc/iwd/main.conf` (copied, not symlinked — iwd ignores symlinks) |
 | `kitty/`                    | `~/.config/kitty/`                  |
@@ -115,6 +127,22 @@ Neovim configured with lazy.nvim + gruvbox-material theme, transparent backgroun
 
 - ThinkPad T480
 - GPU: Intel UHD 620 (uses `intel_backlight`, no proprietary drivers needed)
+
+## Adding a New Feature — Checklist
+
+When adding any new tool or feature, walk through every item before committing:
+
+1. **packages.sh** — Is the package listed (pacman or AUR section)?
+2. **Config files** — Are all config files tracked in `~/dotfiles/<app>/`? (Not just sitting in `~/.config/` untracked)
+3. **setup.sh — symlinks** — Is the config dir added to the `CONFIGS` array (or `HOME_FILES` if it goes in `~/`)?
+4. **setup.sh — bootstrap** — Does the tool need `systemctl enable`, `go install`, sudoers rules, or other post-install steps? Add them.
+5. **bash/.bashrc** — Does it need PATH entries, aliases, shell init, or env vars? Guard against missing binaries.
+6. **hyprland.conf** — Does it need keybinds, env vars, `exec-once` autostart, or window rules?
+7. **waybar** — Does it need a status module or on-click handler?
+8. **scripts/** — Are helper scripts referenced correctly and executable?
+9. **CLAUDE.md** — Update repo structure tree, symlink mapping table, and current goal.
+
+The test: *"If I ran `packages.sh` + `setup.sh` on a blank Arch install, would this feature work with zero manual steps?"*
 
 ## Commands
 

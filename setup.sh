@@ -9,6 +9,9 @@ DOTFILES="$HOME/dotfiles"
 # Directories to symlink into ~/.config/
 CONFIGS=(
     btop
+    calcure
+    drift
+    fcitx5
     hypr
     kitty
     mako
@@ -126,6 +129,12 @@ SUDOERS
 sudo chmod 755 /etc/wireguard
 sudo chmod 440 /etc/sudoers.d/wireguard
 echo "  vpn: sudoers configured"
+
+# Drift terminal screensaver (Go binary)
+echo ""
+echo "Installing drift..."
+go install github.com/phlx0/drift@latest
+echo "  drift: installed"
 
 # XDG user directories (~/Pictures, ~/Downloads, etc.)
 echo ""
