@@ -33,7 +33,9 @@ for entry in "${HOME_FILES[@]}"; do
     if [ -L "$target" ]; then
         echo "  ${entry##*:}: symlink already exists, skipping"
     elif [ -e "$target" ]; then
-        echo "  ${entry##*:}: WARNING — $target already exists and is not a symlink, skipping"
+        mv "$target" "${target}.bak"
+        ln -s "$source" "$target"
+        echo "  ${entry##*:}: backed up existing file to ${entry##*:}.bak, linked"
     else
         ln -s "$source" "$target"
         echo "  ${entry##*:}: linked"
@@ -65,16 +67,41 @@ sudo cp "$DOTFILES/iwd/main.conf" /etc/iwd/main.conf
 echo "  iwd: copied"
 
 # Networking: iwd + systemd-resolved (no NetworkManager)
+# NetworkManager must be disabled for impala (iwd TUI) to work.
 echo ""
 echo "Configuring networking services..."
 sudo systemctl disable --now NetworkManager 2>/dev/null || true
 sudo systemctl disable --now wpa_supplicant 2>/dev/null || true
-sudo systemctl enable iwd
-sudo systemctl enable systemd-resolved
+sudo systemctl enable --now iwd
+sudo systemctl enable --now systemd-resolved
 
 # Point resolv.conf to systemd-resolved (iwd delegates DNS to it)
 sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 echo "  networking: iwd + systemd-resolved enabled"
+
+# Reconnect to WiFi via iwd (NetworkManager was just disabled)
+echo ""
+echo "NetworkManager has been disabled. Connect to WiFi via iwd to continue."
+echo ""
+while true; do
+    read -rp "WiFi SSID: " WIFI_SSID
+    read -rsp "WiFi password: " WIFI_PASS
+    echo ""
+
+    # iwctl expects password via stdin with --passphrase
+    iwctl --passphrase "$WIFI_PASS" station wlan0 connect "$WIFI_SSID"
+
+    echo "Waiting for connection..."
+    sleep 3
+
+    if ping -c 1 -W 5 archlinux.org &>/dev/null; then
+        echo "Connected!"
+        break
+    else
+        echo "Connection failed. Please try again."
+        echo ""
+    fi
+done
 
 # Bluetooth
 echo ""
