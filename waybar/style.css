@@ -118,3 +118,9 @@ tooltip label {
 #custom-vpn.disconnected {
     color: @dim;
 }
+
+#custom-ime {
+    padding: 0 10px;
+    margin-left: 6px;
+    color: @fg;
+}
