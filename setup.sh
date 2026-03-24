@@ -12,6 +12,7 @@ CONFIGS=(
     hypr
     kitty
     mako
+    nvim
     starship
     walker
     waybar

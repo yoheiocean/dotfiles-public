@@ -36,6 +36,8 @@ Minimal Hyprland desktop, built incrementally.
 │   └── current-theme.conf   # kitty color theme (Popping and Locking)
 ├── mako/
 │   └── config          # notification daemon config
+├── nvim/
+│   └── init.lua        # neovim config (lazy.nvim + gruvbox-material)
 ├── scripts/
 │   ├── add-termapp.sh      # add a terminal app (.desktop file with kitty -e)
 │   ├── add-webapp.sh       # add a web app (.desktop file with Brave --app)
@@ -78,6 +80,7 @@ Minimal Hyprland desktop, built incrementally.
 | `iwd/main.conf`             | `/etc/iwd/main.conf` (copied, not symlinked — iwd ignores symlinks) |
 | `kitty/`                    | `~/.config/kitty/`                  |
 | `mako/`                     | `~/.config/mako/`                   |
+| `nvim/`                     | `~/.config/nvim/`                   |
 | `starship/`                 | `~/.config/starship/`               |
 | `scripts/`                  | `~/dotfiles/scripts/` (referenced in place, not symlinked) |
 | `walker/`                   | `~/.config/walker/`                 |
@@ -99,13 +102,14 @@ Terminal apps support — add/remove terminal apps that open in kitty and appear
 App visibility toggle — hide/show any app in Walker via NoDisplay desktop overrides.
 WireGuard VPN — add/connect/remove configs via command center, waybar toggle, scoped sudoers.
 Japanese input — fcitx5 + Mozc, Super+grave toggle, waybar EN/あ indicator, CJK fonts installed.
+Neovim configured with lazy.nvim + gruvbox-material theme, transparent background, sane defaults.
 
 ## Future TODO
 
 - **OSD notifications for hardware keys** — visual/audio feedback when pressing volume, brightness, and media keys (e.g. an on-screen display showing current level)
 - **Global copy/paste/select-all keybinds** — consider Super+C/V/A mapping for GUI apps once they're in use
 - **Japanese input — locale config** — LANG/LC_* variables not yet set in bash config
-- **Neovim customization** — themes, plugins, LSP setup
+- **Neovim — LSP setup** — language servers for bash, python, lua, etc.
 
 ## Hardware
 
