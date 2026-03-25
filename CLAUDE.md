@@ -34,7 +34,9 @@ Minimal Hyprland desktop, built incrementally.
 │   └── config.toml   # drift screensaver config (scenes, themes)
 ├── fcitx5/
 │   ├── config        # fcitx5 hotkey config
-│   └── profile       # fcitx5 input method profile (keyboard-us + mozc)
+│   ├── profile       # fcitx5 input method profile (keyboard-us + mozc)
+│   └── conf/
+│       └── notificationitem.conf  # disable tray icon addon (dbus-activated fcitx5 needs this)
 ├── hypr/
 │   ├── hyprland.conf     # Hyprland compositor config
 │   └── hypridle.conf     # idle daemon config (triggers TTE screensaver)
@@ -87,7 +89,7 @@ Minimal Hyprland desktop, built incrementally.
 | `btop/`                     | `~/.config/btop/`                   |
 | `calcure/`                  | `~/.config/calcure/`                |
 | `drift/`                    | `~/.config/drift/`                  |
-| `fcitx5/`                   | `~/.config/fcitx5/`                 |
+| `fcitx5/`                   | `~/.config/fcitx5/` (copied, not symlinked — fcitx5 overwrites its config at runtime) |
 | `hypr/`                     | `~/.config/hypr/`                   |
 | `iwd/main.conf`             | `/etc/iwd/main.conf` (copied, not symlinked — iwd ignores symlinks) |
 | `kitty/`                    | `~/.config/kitty/`                  |

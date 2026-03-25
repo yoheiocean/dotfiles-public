@@ -11,7 +11,6 @@ CONFIGS=(
     btop
     calcure
     drift
-    fcitx5
     hypr
     kitty
     mako
@@ -77,10 +76,11 @@ sudo systemctl disable --now NetworkManager 2>/dev/null || true
 sudo systemctl disable --now wpa_supplicant 2>/dev/null || true
 sudo systemctl enable --now iwd
 sudo systemctl enable --now systemd-resolved
+sudo systemctl enable --now sshd
 
 # Point resolv.conf to systemd-resolved (iwd delegates DNS to it)
 sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-echo "  networking: iwd + systemd-resolved enabled"
+echo "  networking: iwd + systemd-resolved + sshd enabled"
 
 # Reconnect to WiFi via iwd (NetworkManager was just disabled)
 echo ""
@@ -129,6 +129,18 @@ SUDOERS
 sudo chmod 755 /etc/wireguard
 sudo chmod 440 /etc/sudoers.d/wireguard
 echo "  vpn: sudoers configured"
+
+# fcitx5 (copy, not symlink — fcitx5 overwrites its config dir at runtime)
+# Must be copied before first Hyprland login: dbus auto-activates fcitx5
+# when XMODIFIERS is set, and a bare dbus-launched fcitx5 will overwrite
+# the profile with defaults (no mozc) if these files aren't already in place.
+echo ""
+echo "Configuring fcitx5..."
+mkdir -p "$HOME/.config/fcitx5/conf"
+cp "$DOTFILES/fcitx5/profile" "$HOME/.config/fcitx5/profile"
+cp "$DOTFILES/fcitx5/config" "$HOME/.config/fcitx5/config"
+cp "$DOTFILES/fcitx5/conf/notificationitem.conf" "$HOME/.config/fcitx5/conf/notificationitem.conf"
+echo "  fcitx5: profile, config, and addon settings copied"
 
 # Drift terminal screensaver (Go binary)
 echo ""

@@ -36,6 +36,7 @@ This entire rice was built through conversation with [Claude Code](https://claud
 - **iwd + systemd-resolved** — lightweight wireless networking (replaces NetworkManager)
 - **impala** — floating TUI for managing Wi-Fi connections
 - **WireGuard** — add, connect, remove, and toggle VPN configs via command center and waybar, with scoped passwordless sudo
+- **OpenSSH** — SSH server enabled for remote access
 
 ### Apps & input
 - **Brave** — default browser with web app support (add/remove via command center, opens in app mode)
@@ -89,8 +90,9 @@ This script:
 5. Enables bluetooth
 6. Enables elephant (Walker's data provider)
 7. Configures passwordless sudo for WireGuard commands
-8. Sets up XDG user directories
-9. Sets Brave as the default browser
+8. Enables sshd for remote access
+9. Sets up XDG user directories
+10. Sets Brave as the default browser
 
 ### 4. Reboot and log in
 

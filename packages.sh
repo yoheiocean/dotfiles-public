@@ -40,6 +40,7 @@ PACKAGES=(
 
     # Networking
     iwd
+    openssh
 
     # Bluetooth
     bluez
