@@ -33,10 +33,11 @@ Minimal Hyprland desktop, built incrementally.
 ├── drift/
 │   └── config.toml   # drift screensaver config (scenes, themes)
 ├── fcitx5/
+│   ├── README.md     # detailed docs on dbus race condition and tray icon fix
 │   ├── config        # fcitx5 hotkey config
 │   ├── profile       # fcitx5 input method profile (keyboard-us + mozc)
 │   └── conf/
-│       └── notificationitem.conf  # disable tray icon addon (dbus-activated fcitx5 needs this)
+│       └── notificationitem.conf  # disable tray icon addon (belt-and-suspenders, unreliable alone)
 ├── hypr/
 │   ├── hyprland.conf     # Hyprland compositor config
 │   └── hypridle.conf     # idle daemon config (triggers TTE screensaver)
