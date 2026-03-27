@@ -54,6 +54,9 @@ PACKAGES=(
     # Idle daemon
     hypridle
 
+    # Audio mixer
+    wiremix
+
     # Status bar
     waybar
 

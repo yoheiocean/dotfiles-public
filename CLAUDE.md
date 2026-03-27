@@ -118,6 +118,7 @@ App visibility toggle — hide/show any app in Walker via NoDisplay desktop over
 WireGuard VPN — add/connect/remove configs via command center, waybar toggle, scoped sudoers.
 Japanese input — fcitx5 + Mozc, Super+grave toggle, waybar EN/あ indicator, CJK fonts installed.
 Neovim configured with lazy.nvim + gruvbox-material theme, transparent background, sane defaults.
+Wiremix TUI audio mixer — opens in floating window from waybar volume icon click.
 
 ## Future TODO
 
