@@ -130,6 +130,31 @@ sudo chmod 755 /etc/wireguard
 sudo chmod 440 /etc/sudoers.d/wireguard
 echo "  vpn: sudoers configured"
 
+# Pacman (passwordless for pacsea TUI)
+echo ""
+echo "Configuring pacman sudoers..."
+sudo tee /etc/sudoers.d/pacman > /dev/null <<SUDOERS
+%wheel ALL=(ALL) NOPASSWD: /usr/bin/pacman
+SUDOERS
+sudo chmod 440 /etc/sudoers.d/pacman
+echo "  pacman: sudoers configured"
+
+# awtwall (copy, not symlink — awtwall writes runtime state to its config dir)
+echo ""
+echo "Configuring awtwall..."
+mkdir -p "$HOME/.config/awtwall"
+cp "$DOTFILES/awtwall/state.conf" "$HOME/.config/awtwall/state.conf"
+echo "  awtwall: state.conf copied"
+
+# pacsea (copy, not symlink — pacsea writes runtime data to its config dir)
+echo ""
+echo "Configuring pacsea..."
+mkdir -p "$HOME/.config/pacsea"
+cp "$DOTFILES/pacsea/settings.conf" "$HOME/.config/pacsea/settings.conf"
+cp "$DOTFILES/pacsea/theme.conf" "$HOME/.config/pacsea/theme.conf"
+cp "$DOTFILES/pacsea/keybinds.conf" "$HOME/.config/pacsea/keybinds.conf"
+echo "  pacsea: settings, theme, and keybinds copied"
+
 # fcitx5 (copy, not symlink — fcitx5 overwrites its config dir at runtime)
 # Must be copied before first Hyprland login: dbus auto-activates fcitx5
 # when XMODIFIERS is set, and a bare dbus-launched fcitx5 will overwrite

@@ -134,6 +134,12 @@ AUR_PACKAGES=(
     # Calendar TUI
     calcure
 
+    # Wallpaper picker TUI
+    awtwall
+
+    # Package search TUI
+    pacsea-bin
+
     # App launcher
     walker
     elephant

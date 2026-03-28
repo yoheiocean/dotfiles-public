@@ -32,6 +32,12 @@ Minimal Hyprland desktop, built incrementally.
 │   └── tasks.csv     # calcure tasks data
 ├── drift/
 │   └── config.toml   # drift screensaver config (scenes, themes)
+├── awtwall/
+│   └── state.conf     # awtwall wallpaper picker config (dir, backend, transitions)
+├── pacsea/
+│   ├── settings.conf  # pacsea settings (passwordless sudo enabled)
+│   ├── theme.conf     # custom Popping and Locking theme
+│   └── keybinds.conf  # pacsea keybinds
 ├── fcitx5/
 │   ├── README.md     # detailed docs on dbus race condition and tray icon fix
 │   ├── config        # fcitx5 hotkey config
@@ -87,6 +93,7 @@ Minimal Hyprland desktop, built incrementally.
 |------------------------------|-------------------------------------|
 | `bash/.bash_profile`        | `~/.bash_profile`                   |
 | `bash/.bashrc`              | `~/.bashrc`                         |
+| `awtwall/`                  | `~/.config/awtwall/` (copied, not symlinked — awtwall writes runtime state) |
 | `btop/`                     | `~/.config/btop/`                   |
 | `calcure/`                  | `~/.config/calcure/`                |
 | `drift/`                    | `~/.config/drift/`                  |
@@ -96,6 +103,7 @@ Minimal Hyprland desktop, built incrementally.
 | `kitty/`                    | `~/.config/kitty/`                  |
 | `mako/`                     | `~/.config/mako/`                   |
 | `nvim/`                     | `~/.config/nvim/`                   |
+| `pacsea/`                   | `~/.config/pacsea/` (copied, not symlinked — pacsea writes runtime data) |
 | `starship/`                 | `~/.config/starship/`               |
 | `scripts/`                  | `~/dotfiles/scripts/` (referenced in place, not symlinked) |
 | `walker/`                   | `~/.config/walker/`                 |
@@ -119,6 +127,8 @@ WireGuard VPN — add/connect/remove configs via command center, waybar toggle, 
 Japanese input — fcitx5 + Mozc, Super+grave toggle, waybar EN/あ indicator, CJK fonts installed.
 Neovim configured with lazy.nvim + gruvbox-material theme, transparent background, sane defaults.
 Wiremix TUI audio mixer — opens in floating window from waybar volume icon click.
+Pacsea package search TUI — install/remove pacman+AUR packages from command center in floating window.
+Awtwall wallpaper picker TUI — browse and set wallpapers (Super+P), cycle next (Super+Shift+P).
 
 ## Future TODO
 
