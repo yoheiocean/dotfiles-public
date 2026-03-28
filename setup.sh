@@ -178,7 +178,7 @@ echo "  fcitx5: profile, config, and addon settings copied"
 # Drift terminal screensaver (Go binary)
 echo ""
 echo "Installing drift..."
-go install github.com/phlx0/drift@latest
+go install github.com/phlx0/drift@5f81318
 echo "  drift: installed"
 
 # XDG user directories (~/Pictures, ~/Downloads, etc.)
