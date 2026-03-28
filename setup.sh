@@ -155,6 +155,14 @@ cp "$DOTFILES/pacsea/theme.conf" "$HOME/.config/pacsea/theme.conf"
 cp "$DOTFILES/pacsea/keybinds.conf" "$HOME/.config/pacsea/keybinds.conf"
 echo "  pacsea: settings, theme, and keybinds copied"
 
+# VS Code (copy, not symlink — VS Code rewrites its config dir at runtime)
+echo ""
+echo "Configuring VS Code..."
+mkdir -p "$HOME/.config/Code - OSS/User"
+cp "$DOTFILES/code/settings.json" "$HOME/.config/Code - OSS/User/settings.json"
+code --install-extension anthropic.claude-code --force 2>/dev/null || true
+echo "  vscode: settings copied, extensions installed"
+
 # fcitx5 (copy, not symlink — fcitx5 overwrites its config dir at runtime)
 # Must be copied before first Hyprland login: dbus auto-activates fcitx5
 # when XMODIFIERS is set, and a bare dbus-launched fcitx5 will overwrite

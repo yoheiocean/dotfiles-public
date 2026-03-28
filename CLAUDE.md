@@ -32,6 +32,8 @@ Minimal Hyprland desktop, built incrementally.
 │   └── tasks.csv     # calcure tasks data
 ├── drift/
 │   └── config.toml   # drift screensaver config (scenes, themes)
+├── code/
+│   └── settings.json  # VS Code settings (font, Claude Code extension)
 ├── awtwall/
 │   └── state.conf     # awtwall wallpaper picker config (dir, backend, transitions)
 ├── pacsea/
@@ -94,6 +96,7 @@ Minimal Hyprland desktop, built incrementally.
 | `bash/.bash_profile`        | `~/.bash_profile`                   |
 | `bash/.bashrc`              | `~/.bashrc`                         |
 | `awtwall/`                  | `~/.config/awtwall/` (copied, not symlinked — awtwall writes runtime state) |
+| `code/`                     | `~/.config/Code - OSS/User/` (copied, not symlinked — VS Code rewrites config at runtime) |
 | `btop/`                     | `~/.config/btop/`                   |
 | `calcure/`                  | `~/.config/calcure/`                |
 | `drift/`                    | `~/.config/drift/`                  |
@@ -129,6 +132,7 @@ Neovim configured with lazy.nvim + gruvbox-material theme, transparent backgroun
 Wiremix TUI audio mixer — opens in floating window from waybar volume icon click.
 Pacsea package search TUI — install/remove pacman+AUR packages from command center in floating window.
 Awtwall wallpaper picker TUI — browse and set wallpapers (Super+P), cycle next (Super+Shift+P).
+VS Code with Claude Code extension — settings tracked, extension auto-installed on setup.
 
 ## Future TODO
 

@@ -36,6 +36,7 @@ PACKAGES=(
     wl-clipboard
 
     # Editor
+    code
     neovim
 
     # Networking
@@ -69,6 +70,7 @@ PACKAGES=(
     swww
 
     # Utilities
+    duf
     jq
     htop
     btop
