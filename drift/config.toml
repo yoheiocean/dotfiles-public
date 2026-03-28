@@ -9,7 +9,7 @@
 [engine]
 fps           = 30     # target frames per second
 cycle_seconds = 60     # seconds per scene, 0 = stay on one scene
-scenes        = "waveform,constellation,pipes,rain"
+scenes        = "waveform,constellation,pipes,rain,particles,orrery"
 theme         = "cosmic"
 shuffle       = true   # randomise scene order
 hide_tmux_status = false  # tmux: hide status bar while displaying scene
@@ -38,7 +38,7 @@ speed     = 1.0
 [scene.pipes]
 heads         = 6
 turn_chance   = 0.15  # probability of turning per step (0.0–1.0)
-speed         = 1.0
+speed         = 0.7
 reset_seconds = 45.0  # seconds before screen clears and restarts
 
 [scene.maze]
