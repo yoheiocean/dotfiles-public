@@ -80,6 +80,7 @@ PACKAGES=(
     eza
     zoxide
     fastfetch
+    imgcat
 
     # Japanese fonts
     noto-fonts-cjk
