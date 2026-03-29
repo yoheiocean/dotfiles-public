@@ -195,6 +195,7 @@ xdg-mime default thunar.desktop inode/directory
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Purple-Dark-Gruvbox'
 gsettings set org.gnome.desktop.interface icon-theme 'Colloid-Teal-Dark'
+gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
 echo "  Thunar set as default, Colloid Gruvbox theme applied"
 
 # Default browser
