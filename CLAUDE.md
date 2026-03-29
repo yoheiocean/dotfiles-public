@@ -32,6 +32,8 @@ Minimal Hyprland desktop, built incrementally.
 │   └── tasks.csv     # calcure tasks data
 ├── drift/
 │   └── config.toml   # drift screensaver config (scenes, themes)
+├── gtk-3.0/
+│   └── gtk.css       # GTK3 theme overrides (Popping and Locking background colors)
 ├── code/
 │   └── settings.json  # VS Code settings (font, Claude Code extension)
 ├── awtwall/
@@ -100,6 +102,7 @@ Minimal Hyprland desktop, built incrementally.
 | `btop/`                     | `~/.config/btop/`                   |
 | `calcure/`                  | `~/.config/calcure/`                |
 | `drift/`                    | `~/.config/drift/`                  |
+| `gtk-3.0/`                  | `~/.config/gtk-3.0/`                |
 | `fcitx5/`                   | `~/.config/fcitx5/` (copied, not symlinked — fcitx5 overwrites its config at runtime) |
 | `hypr/`                     | `~/.config/hypr/`                   |
 | `iwd/main.conf`             | `/etc/iwd/main.conf` (copied, not symlinked — iwd ignores symlinks) |
@@ -133,6 +136,7 @@ Wiremix TUI audio mixer — opens in floating window from waybar volume icon cli
 Pacsea package search TUI — install/remove pacman+AUR packages from command center in floating window.
 Awtwall wallpaper picker TUI — browse and set wallpapers (Super+P), cycle next (Super+Shift+P).
 VS Code with Claude Code extension — settings tracked, extension auto-installed on setup.
+GTK theme — Colloid Purple Dark Gruvbox with Colloid Teal Dark icons, custom background (#181921) via gtk.css overrides. Thunar as GUI file manager, dark mode for all GTK apps.
 
 ## Future TODO
 

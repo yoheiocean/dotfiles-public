@@ -11,6 +11,7 @@ CONFIGS=(
     btop
     calcure
     drift
+    gtk-3.0
     hypr
     kitty
     mako
@@ -186,6 +187,15 @@ echo ""
 echo "Setting up XDG user directories..."
 xdg-user-dirs-update
 echo "  xdg-user-dirs: configured"
+
+# Default file manager, GTK theme, and dark mode
+echo ""
+echo "Configuring GTK theme and file manager..."
+xdg-mime default thunar.desktop inode/directory
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Purple-Dark-Gruvbox'
+gsettings set org.gnome.desktop.interface icon-theme 'Colloid-Teal-Dark'
+echo "  Thunar set as default, Colloid Gruvbox theme applied"
 
 # Default browser
 echo ""

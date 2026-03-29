@@ -1,0 +1,30 @@
+/* Popping and Locking background override for Colloid-Purple-Dark-Gruvbox */
+/* Match kitty/hyprland background: #181921 */
+
+window, .background {
+    background-color: #181921;
+}
+
+.view:not(:selected):not(:hover),
+treeview:not(:selected):not(:hover),
+iconview:not(:selected):not(:hover),
+textview text,
+list:not(:selected):not(:hover),
+row:not(:selected):not(:hover) {
+    background-color: #181921;
+}
+
+toolbar, .toolbar, .path-bar, .primary-toolbar,
+headerbar, .titlebar, .header-bar,
+statusbar, .statusbar, actionbar {
+    background-color: #181921;
+}
+
+menubar, .menubar, menu, .menu {
+    background-color: #181921;
+}
+
+treeview header, treeview header button,
+.column-header, .column-header button {
+    background-color: #181921;
+}

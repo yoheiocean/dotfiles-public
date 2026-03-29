@@ -9,6 +9,7 @@ PACKAGES=(
     # Wayland / Hyprland
     hyprland
     xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
     uwsm
 
     # Terminal
@@ -25,6 +26,8 @@ PACKAGES=(
 
     # File manager
     yazi
+    thunar
+    gvfs
 
     # Notification daemon
     mako
@@ -142,6 +145,10 @@ AUR_PACKAGES=(
 
     # Package search TUI
     pacsea-bin
+
+    # GTK theme
+    colloid-gruvbox-gtk-theme-git
+    colloid-icon-theme-git
 
     # App launcher
     walker
