@@ -12,6 +12,7 @@ alias la='eza -la'
 alias a='z'
 alias ai='zi'
 alias icat='kitten icat'
+alias ssh='TERM=xterm-256color ssh'
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$(go env GOPATH 2>/dev/null)/bin:$PATH"
