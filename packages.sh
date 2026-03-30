@@ -83,7 +83,6 @@ PACKAGES=(
     eza
     zoxide
     fastfetch
-    imgcat
 
     # Japanese fonts
     noto-fonts-cjk
@@ -149,6 +148,9 @@ AUR_PACKAGES=(
     # GTK theme
     colloid-gruvbox-gtk-theme-git
     colloid-icon-theme-git
+
+    # File sharing
+    localsend-bin
 
     # App launcher
     walker
