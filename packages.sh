@@ -72,6 +72,9 @@ PACKAGES=(
     # Wallpaper
     swww
 
+    # Media
+    ffmpeg
+
     # Utilities
     duf
     jq
