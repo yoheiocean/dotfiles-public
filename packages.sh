@@ -74,6 +74,10 @@ PACKAGES=(
 
     # Media
     ffmpeg
+    cava
+
+    # Audio routing (ALSA → PipeWire)
+    pipewire-alsa
 
     # Utilities
     duf

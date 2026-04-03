@@ -182,6 +182,12 @@ echo "Installing drift..."
 go install github.com/phlx0/drift@5f81318
 echo "  drift: installed"
 
+# Climp CLI media player (Go binary)
+echo ""
+echo "Installing climp..."
+go install github.com/olivier-w/climp@latest
+echo "  climp: installed"
+
 # XDG user directories (~/Pictures, ~/Downloads, etc.)
 echo ""
 echo "Setting up XDG user directories..."
