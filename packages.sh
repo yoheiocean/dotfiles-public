@@ -146,6 +146,9 @@ AUR_PACKAGES=(
     # Calendar TUI
     calcure
 
+    # Scientific calculator TUI
+    kalker
+
     # Wallpaper picker TUI
     awtwall
 

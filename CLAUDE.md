@@ -136,6 +136,7 @@ Wiremix TUI audio mixer — opens in floating window from waybar volume icon cli
 Pacsea package search TUI — install/remove pacman+AUR packages from command center in floating window.
 Awtwall wallpaper picker TUI — browse and set wallpapers (Super+P), cycle next (Super+Shift+P).
 VS Code with Claude Code extension — settings tracked, extension auto-installed on setup.
+Kalker scientific calculator TUI — derivatives, integrals, variables, functions (`kalker`).
 GTK theme — Colloid Purple Dark Gruvbox with Colloid Teal Dark icons, custom background (#181921) via gtk.css overrides. Thunar as GUI file manager, dark mode for all GTK apps.
 
 ## Future TODO
