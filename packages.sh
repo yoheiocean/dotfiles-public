@@ -162,6 +162,9 @@ AUR_PACKAGES=(
     # File sharing
     localsend-bin
 
+    # Video conferencing
+    zoom
+
     # App launcher
     walker
     elephant

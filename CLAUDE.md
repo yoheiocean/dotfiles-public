@@ -50,7 +50,8 @@ Minimal Hyprland desktop, built incrementally.
 │       └── notificationitem.conf  # disable tray icon addon (belt-and-suspenders, unreliable alone)
 ├── hypr/
 │   ├── hyprland.conf     # Hyprland compositor config
-│   └── hypridle.conf     # idle daemon config (triggers TTE screensaver)
+│   ├── hypridle.conf     # idle daemon config (triggers TTE screensaver)
+│   └── xdph.conf         # xdg-desktop-portal-hyprland config (allow_dma=false for Intel iGPU screen share)
 ├── iwd/
 │   └── main.conf       # iwd wireless daemon config
 ├── kitty/
@@ -138,6 +139,7 @@ Awtwall wallpaper picker TUI — browse and set wallpapers (Super+P), cycle next
 VS Code with Claude Code extension — settings tracked, extension auto-installed on setup.
 Kalker scientific calculator TUI — derivatives, integrals, variables, functions (`kalker`).
 GTK theme — Colloid Purple Dark Gruvbox with Colloid Teal Dark icons, custom background (#181921) via gtk.css overrides. Thunar as GUI file manager, dark mode for all GTK apps.
+Zoom video conferencing — screen sharing works via xdg-desktop-portal-hyprland with `allow_dma=false` workaround for Intel iGPU DMA-BUF buffer bug (`hypr/xdph.conf`).
 
 ## Future TODO
 
