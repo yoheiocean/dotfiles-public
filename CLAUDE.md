@@ -52,6 +52,8 @@ Minimal Hyprland desktop, built incrementally.
 │   ├── hyprland.conf     # Hyprland compositor config
 │   ├── hypridle.conf     # idle daemon config (triggers TTE screensaver)
 │   └── xdph.conf         # xdg-desktop-portal-hyprland config (allow_dma=false for Intel iGPU screen share)
+├── impala/
+│   └── config.toml     # impala wifi TUI config (binds `h` for hidden network connect)
 ├── iwd/
 │   └── main.conf       # iwd wireless daemon config
 ├── kitty/
@@ -106,6 +108,7 @@ Minimal Hyprland desktop, built incrementally.
 | `gtk-3.0/`                  | `~/.config/gtk-3.0/`                |
 | `fcitx5/`                   | `~/.config/fcitx5/` (copied, not symlinked — fcitx5 overwrites its config at runtime) |
 | `hypr/`                     | `~/.config/hypr/`                   |
+| `impala/`                   | `~/.config/impala/`                 |
 | `iwd/main.conf`             | `/etc/iwd/main.conf` (copied, not symlinked — iwd ignores symlinks) |
 | `kitty/`                    | `~/.config/kitty/`                  |
 | `mako/`                     | `~/.config/mako/`                   |

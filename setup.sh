@@ -13,6 +13,7 @@ CONFIGS=(
     drift
     gtk-3.0
     hypr
+    impala
     kitty
     mako
     nvim
