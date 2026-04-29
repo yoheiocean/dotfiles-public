@@ -53,7 +53,7 @@ Minimal Hyprland desktop, built incrementally.
 │   ├── hypridle.conf     # idle daemon config (triggers TTE screensaver)
 │   └── xdph.conf         # xdg-desktop-portal-hyprland config (allow_dma=false for Intel iGPU screen share)
 ├── impala/
-│   └── config.toml     # impala wifi TUI config (binds `h` for hidden network connect)
+│   └── config.toml     # impala wifi TUI config (hidden-network hint; actual bind is hardcoded to `n`)
 ├── iwd/
 │   └── main.conf       # iwd wireless daemon config
 ├── kitty/

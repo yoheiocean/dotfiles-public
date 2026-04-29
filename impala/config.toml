@@ -1,2 +1,5 @@
 [station.new_network]
-connect_hidden = "h"
+show_all = "a"
+# Cosmetic only — impala hardcodes the actual bind to `n` (handler.rs).
+# This value just controls the hint text shown at the bottom of the screen.
+connect_hidden = "n"
