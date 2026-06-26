@@ -90,6 +90,7 @@ PACKAGES=(
     eza
     zoxide
     fastfetch
+    less
 
     # Japanese fonts
     noto-fonts-cjk
