@@ -150,6 +150,9 @@ AUR_PACKAGES=(
     # Scientific calculator TUI
     kalker
 
+    # Music player TUI (local files + ~58k online radio stations)
+    cliamp
+
     # Wallpaper picker TUI
     awtwall
 

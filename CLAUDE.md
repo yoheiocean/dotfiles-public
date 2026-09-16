@@ -141,6 +141,7 @@ Pacsea package search TUI — install/remove pacman+AUR packages from command ce
 Awtwall wallpaper picker TUI — browse and set wallpapers (Super+P), cycle next (Super+Shift+P).
 VS Code with Claude Code extension — settings tracked, extension auto-installed on setup.
 Kalker scientific calculator TUI — derivatives, integrals, variables, functions (`kalker`).
+Cliamp music player TUI — Winamp 2.x-style player for local files and online radio (`R` opens the ~58k-station radio-browser.info directory). Run `cliamp`; it also exposes an IPC CLI (`cliamp play|status|next|volume|theme`). No config tracked — `~/.config/cliamp/` holds only a runtime socket, log, history, and an empty `config.toml`; track it (copied, not symlinked) if custom stations in `radios.toml` or a theme are set later. `yt-dlp` comes in as a hard dependency; `ffmpeg` and `pipewire-alsa` were already tracked.
 GTK theme — Colloid Purple Dark Gruvbox with Colloid Teal Dark icons, custom background (#181921) via gtk.css overrides. Thunar as GUI file manager, dark mode for all GTK apps.
 Zoom video conferencing — screen sharing works via xdg-desktop-portal-hyprland with `allow_dma=false` workaround for Intel iGPU DMA-BUF buffer bug (`hypr/xdph.conf`).
 
