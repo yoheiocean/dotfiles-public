@@ -38,3 +38,17 @@ Ran packages.sh + setup.sh on a fresh Arch install. Found and fixed three bugs:
 - Drift binary not installed (added `go install` to setup.sh, guarded bashrc init)
 - Calcure config not tracked (added calcure/ to repo and symlinks)
 - fcitx5 profile not tracked (added fcitx5/ to repo and symlinks — Mozc wasn't configured)
+
+## DNS Bug Found (2026-09-16)
+
+A leftover NetworkManager `/etc/resolv.conf` (static, generated before
+`setup.sh` disabled NM) silently broke every Go build off the home network:
+- glibc programs were unaffected — `nsswitch.conf` routes them through
+  systemd-resolved over D-Bus, never reading `/etc/resolv.conf`
+- Go uses its own resolver, read the stale file, and timed out on the
+  hardcoded home DNS servers
+- This broke the `cliamp` AUR build and would break `go install` in setup.sh
+  on any fresh machine that had NM write a resolv.conf first
+
+Fixed by restoring the systemd-resolved stub symlink; `setup.sh` now verifies
+the symlink stuck and warns if not.

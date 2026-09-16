@@ -80,8 +80,18 @@ sudo systemctl enable --now iwd
 sudo systemctl enable --now systemd-resolved
 sudo systemctl enable --now sshd
 
-# Point resolv.conf to systemd-resolved (iwd delegates DNS to it)
+# Point resolv.conf to systemd-resolved (iwd delegates DNS to it).
+# Force the symlink: NetworkManager leaves behind a static /etc/resolv.conf
+# with the DNS servers of whatever network it last saw. glibc programs don't
+# notice (nsswitch sends them to resolved over D-Bus), but anything with its
+# own resolver — Go, notably — reads that stale file and times out off-network.
+# That silently breaks `go install` below and AUR Go builds, so verify it stuck.
 sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+if [ "$(readlink -f /etc/resolv.conf)" != "/run/systemd/resolve/stub-resolv.conf" ]; then
+    echo "  WARNING: /etc/resolv.conf is not the systemd-resolved stub."
+    echo "           Go builds and 'go install' will fail off your home network."
+    echo "           Fix: sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf"
+fi
 echo "  networking: iwd + systemd-resolved + sshd enabled"
 
 # Reconnect to WiFi via iwd (NetworkManager was just disabled)
