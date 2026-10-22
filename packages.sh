@@ -24,6 +24,9 @@ PACKAGES=(
     # Authentication agent
     polkit-gnome
 
+    # Secret store (unlocked at login via PAM; holds Nextcloud credentials)
+    gnome-keyring
+
     # File manager
     yazi
     thunar
@@ -112,6 +115,9 @@ PACKAGES=(
 
     # Git / GitHub
     github-cli
+
+    # File sync
+    nextcloud-client
 )
 
 echo "Installing pacman packages..."

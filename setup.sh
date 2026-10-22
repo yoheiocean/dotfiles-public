@@ -118,6 +118,21 @@ while true; do
     fi
 done
 
+# gnome-keyring: unlock the login keyring with the TTY password at login
+# (Nextcloud stores its credentials there). No display manager, so hook
+# pam_gnome_keyring into the TTY login stack directly.
+echo ""
+echo "Configuring gnome-keyring PAM..."
+if ! grep -q pam_gnome_keyring /etc/pam.d/login; then
+    sudo sed -i \
+        -e '/^auth.*system-local-login/a auth       optional     pam_gnome_keyring.so' \
+        -e '/^session.*system-local-login/a session    optional     pam_gnome_keyring.so auto_start' \
+        /etc/pam.d/login
+    echo "  gnome-keyring: PAM configured"
+else
+    echo "  gnome-keyring: PAM already configured, skipping"
+fi
+
 # Bluetooth
 echo ""
 echo "Enabling bluetooth..."

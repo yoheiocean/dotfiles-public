@@ -143,6 +143,7 @@ VS Code with Claude Code extension — settings tracked, extension auto-installe
 Kalker scientific calculator TUI — derivatives, integrals, variables, functions (`kalker`).
 Cliamp music player TUI — Winamp 2.x-style player for local files and online radio (`R` opens the ~58k-station radio-browser.info directory). Run `cliamp`; it also exposes an IPC CLI (`cliamp play|status|next|volume|theme`). No config tracked — `~/.config/cliamp/` holds only a runtime socket, log, history, and an empty `config.toml`; track it (copied, not symlinked) if custom stations in `radios.toml` or a theme are set later. `yt-dlp` comes in as a hard dependency; `ffmpeg` and `pipewire-alsa` were already tracked.
 GTK theme — Colloid Purple Dark Gruvbox with Colloid Teal Dark icons, custom background (#181921) via gtk.css overrides. Thunar as GUI file manager, dark mode for all GTK apps.
+Nextcloud desktop client — file sync, autostarted via `exec-once = nextcloud --background` (tray icon in waybar). Credentials live in gnome-keyring, which `pam_gnome_keyring` in `/etc/pam.d/login` unlocks with the TTY login password (set up idempotently in `setup.sh`). Keep "Launch on system startup" unchecked in Nextcloud's settings, or it writes `~/.config/autostart/Nextcloud.desktop` and uwsm launches it a second time. `~/.config/Nextcloud/` holds account and sync-folder state and is not tracked.
 Zoom video conferencing — screen sharing works via xdg-desktop-portal-hyprland with `allow_dma=false` workaround for Intel iGPU DMA-BUF buffer bug (`hypr/xdph.conf`).
 
 ## Future TODO
